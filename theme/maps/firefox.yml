@@ -1,0 +1,31 @@
+# Firefox map: static WebExtension theme keys (manifest "theme" section)
+# mapped to palette colors. Hex values may also be used directly.
+target: firefox
+colors:
+  frame: background
+  toolbar: background_alt
+  toolbar_text: foreground
+  toolbar_field: background_sel
+  toolbar_field_text: foreground
+  toolbar_field_border: border
+  tab_background: background_alt
+  tab_loading: accent
+  tab_text: foreground
+  tab_line: accent
+  icons: foreground_dim
+  icons_attention: accent
+  bookmark_text: foreground
+  button: background_sel
+  button_hover: background_sel
+  button_active: border
+  popup: background_alt
+  popup_text: foreground
+  popup_border: border
+  popup_highlight: selection_bg
+  popup_highlight_text: foreground
+  ntp_background: background
+  ntp_text: foreground
+  ntp_link: accent
+  sidebar: background_alt
+  sidebar_text: foreground
+  sidebar_highlight: selection_bg

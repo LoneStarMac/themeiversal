@@ -1,0 +1,99 @@
+name: Build themes & docs
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+    paths:
+      - "palettes/**"
+      - "filters/**"
+      - "maps/**"
+      - "scripts/**"
+      - "themeiversal.yml"
+      - ".github/workflows/build.yml"
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Check palette/filter coverage (all refs resolve)
+        run: python scripts/generate.py --check
+
+      - name: Generate themes & docs
+        run: python scripts/generate.py
+
+      - name: Validate generated files
+        run: |
+          set -e
+          for f in dist/vscode/*/package.json dist/vscode/*/themes/*.json dist/firefox/*/manifest.json; do
+            python -m json.tool "$f" > /dev/null
+          done
+          for f in dist/iterm2/*.itermcolors dist/terminal/*.terminal dist/bbedit/*.bbColorScheme; do
+            head -c 80 "$f" | grep -q plist
+          done
+          test -f dist/docs/index.html
+          grep -q "Themeiversal" dist/docs/index.html
+          test -n "$(find dist/kde -name '*.colors')"
+          test -n "$(find dist/gnome -name 'gtk.css')"
+          test -n "$(find dist/windowmaker -name '*.style')"
+          for z in dist/*.zip; do unzip -l "$z" > /dev/null; done
+          echo "all generated files valid"
+
+      - name: Upload bundle artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: themeiversal-bundle
+          path: dist/themeiversal-*-bundle.zip
+
+      - name: Attach bundle to tag release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/themeiversal-*-bundle.zip
+
+  docs:
+    # Publish the Zensicle docs site (with live theme picker) to Pages.
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Generate docs site
+        run: python scripts/generate.py
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/docs
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

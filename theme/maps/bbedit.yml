@@ -1,0 +1,40 @@
+# BBEdit map.
+# Top-level keys are the base plist color keys BBEdit uses in
+# .bbColorScheme files; `bblm` keys are per-language-module colors
+# (the "com.barebones.bblm.*" keys BBEdit writes natively).
+target: bbedit
+keys:
+  BackgroundColor: background
+  DifferenceHighlightColor: background_alt
+  InsertionPointLineHighlightColor: line_highlight
+  SublineDifferenceHighlightColor: background_sel
+  PrimaryHighlightColor: selection_bg
+  SecondaryHighlightColor: background_sel
+  SpellingColor: error
+  InvisibleSpacesColor: comment
+  InvisibleOthersColor: foreground_dim
+  UseCustomHighlightColor: false
+  HighlightInsertionPoint: true
+bblm:
+  com.barebones.bblm.code: variable
+  com.barebones.bblm.comment: comment
+  com.barebones.bblm.keyword: keyword
+  com.barebones.bblm.string: string
+  com.barebones.bblm.escape: number
+  com.barebones.bblm.number: number
+  com.barebones.bblm.function: function
+  com.barebones.bblm.variable: variable
+  com.barebones.bblm.preprocess: accent_2
+  com.barebones.bblm.symbol: operator
+  com.barebones.bblm.type: type
+  com.barebones.bblm.tag: tag
+  com.barebones.bblm.attribute: attribute
+  com.barebones.bblm.regex: constant
+  com.barebones.bblm.c.keyword2: constant
+  com.barebones.bblm.css.property: attribute
+  com.barebones.bblm.css.color-spec: number
+  com.barebones.bblm.css.custom-property: variable
+  com.barebones.bblm.js.regexp: constant
+  com.barebones.bblm.markdown.url: accent
+  com.barebones.bblm.markdown.codeblock: string
+  com.barebones.bblm.shell.comment: comment

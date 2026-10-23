@@ -1,0 +1,49 @@
+# A Themeiversal palette / "filter".
+# Everything below `colors` is a named semantic color. Target mappings
+# (in maps/) reference these names; a palette never names an app directly.
+
+id: default
+name: Themeiversal Default
+type: dark
+description: Warm dark scheme: soft corals, amber and sage on deep violet-charcoal.
+
+colors:
+  # Surfaces
+  background: "#23212b"
+  background_alt: "#2d2b36"
+  background_sel: "#3a3646"
+  selection_bg: "#443e54"
+  line_highlight: "#2b2934"
+  border: "#3c3848"
+
+  # Text
+  foreground: "#e6e1d9"
+  foreground_dim: "#8f8a9a"
+  comment: "#6f6a80"
+
+  # Accents
+  accent: "#e8a55c"     # amber
+  accent_2: "#b48ce6"   # violet
+  accent_3: "#e07085"   # rose
+
+  # Syntax
+  keyword: "#f28b54"
+  string: "#a8c47a"
+  number: "#dcb16a"
+  function: "#6fb8c9"
+  type: "#7fc3b1"
+  constant: "#b48ce6"
+  operator: "#c9c4d4"
+  variable: "#e6e1d9"
+  tag: "#f28b54"
+  attribute: "#6fb8c9"
+
+  # VCS / diagnostics
+  added: "#a8c47a"
+  modified: "#dcb16a"
+  removed: "#e07085"
+  error: "#ec6b74"
+  warning: "#e3c17a"
+
+  # Editor chrome
+  cursor: "#e8a55c"

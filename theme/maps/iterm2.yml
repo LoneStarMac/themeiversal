@@ -1,0 +1,29 @@
+# iTerm2 map: target key -> palette color name
+# Values are iTerm "Color Presets" keys from the .itermcolors plist.
+target: iterm2
+keys:
+  Background: background
+  Foreground: foreground
+  Bold: accent
+  Link: accent_2
+  Cursor Color: cursor
+  Cursor Text: background
+  Selection: selection_bg
+  Selected Text: foreground
+  Badge: accent_3
+  Ansi 0 Color: background_alt
+  Ansi 1 Color: error
+  Ansi 2 Color: added
+  Ansi 3 Color: warning
+  Ansi 4 Color: accent_2
+  Ansi 5 Color: accent_3
+  Ansi 6 Color: function
+  Ansi 7 Color: foreground_dim
+  Ansi 8 Color: comment
+  Ansi 9 Color: removed
+  Ansi 10 Color: string
+  Ansi 11 Color: number
+  Ansi 12 Color: accent
+  Ansi 13 Color: constant
+  Ansi 14 Color: type
+  Ansi 15 Color: foreground

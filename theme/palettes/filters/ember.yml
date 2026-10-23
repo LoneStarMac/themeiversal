@@ -1,0 +1,85 @@
+# A Zensicle base palette. Plain hex colors, `_pd` (dark) / `_pl`
+# (light) variants for anything that flips with the OS appearance.
+#
+# Filters (filters/*.yml) apply math ON TOP of this palette:
+#   (background; temp:-0.15; opacity:0.5)
+# Filters may reference any color defined here and chain operations.
+
+id: ember
+name: Themeiversal Ember
+description: >-
+  Warm family â soft corals, amber and sage on deep violet-charcoal
+  (dark), ink on warm paper (light). Filters transform it further.
+
+colors:
+  # Surfaces
+  background_pd: "#23212b"
+  background_pl: "#f7f4ef"
+  background_alt_pd: "#2d2b36"
+  background_alt_pl: "#efeae2"
+  background_sel_pd: "#3a3646"
+  background_sel_pl: "#e6e0d2"
+  selection_bg_pd: "#443e54"
+  selection_bg_pl: "#e4dcca"
+  line_highlight_pd: "#2b2934"
+  line_highlight_pl: "#efeadf"
+  border_pd: "#3c3848"
+  border_pl: "#d8d1c4"
+
+  # Text
+  foreground_pd: "#e6e1d9"
+  foreground_pl: "#33313b"
+  foreground_dim_pd: "#8f8a9a"
+  foreground_dim_pl: "#7a7686"
+  comment_pd: "#6f6a80"
+  comment_pl: "#8d8a99"
+
+  # Accents
+  accent_pd: "#e8a55c"
+  accent_pl: "#a56a1f"
+  accent_2_pd: "#b48ce6"
+  accent_2_pl: "#7d5bb5"
+  accent_3_pd: "#e07085"
+  accent_3_pl: "#b04a62"
+
+  # Syntax
+  keyword_pd: "#f28b54"
+  keyword_pl: "#cf5f36"
+  string_pd: "#a8c47a"
+  string_pl: "#64813a"
+  number_pd: "#dcb16a"
+  number_pl: "#a1742a"
+  function_pd: "#6fb8c9"
+  function_pl: "#2f7a8c"
+  type_pd: "#7fc3b1"
+  type_pl: "#2e8a74"
+  constant_pd: "#b48ce6"
+  constant_pl: "#7d5bb5"
+  operator_pd: "#c9c4d4"
+  operator_pl: "#5b5866"
+  variable_pd: "#e6e1d9"
+  variable_pl: "#33313b"
+  tag_pd: "#f28b54"
+  tag_pl: "#cf5f36"
+  attribute_pd: "#6fb8c9"
+  attribute_pl: "#2f7a8c"
+
+  # VCS / diagnostics
+  added_pd: "#a8c47a"
+  added_pl: "#64813a"
+  modified_pd: "#dcb16a"
+  modified_pl: "#a1742a"
+  removed_pd: "#e07085"
+  removed_pl: "#b04a62"
+  error_pd: "#ec6b74"
+  error_pl: "#c04040"
+  warning_pd: "#e3c17a"
+  warning_pl: "#9c7a1e"
+
+  # Editor chrome
+  cursor_pd: "#e8a55c"
+  cursor_pl: "#a56a1f"
+
+  # Scrollbar overlays
+  scrollbar_pd: "#ffffff14"
+  scrollbar_pl: "#00000018"

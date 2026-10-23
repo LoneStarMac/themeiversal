@@ -1,0 +1,144 @@
+# VS Code / VSCodium map.
+# `ui` maps workbench color keys to palette names (plain names, or
+# hex literals if you need a one-off). `tokens` is the tokenColors list;
+# each entry's `scope`, `fontStyle`, `bold`, `italic` pass through, and
+# `foreground` / `background` are palette color names.
+target: vscode
+ui:
+  editor.background: background
+  editor.foreground: foreground
+  editor.lineHighlightBackground: line_highlight
+  editor.selectionBackground: selection_bg
+  editorCursor.foreground: cursor
+  editorIndentGuide.background1: border
+  editorIndentGuide.activeBackground: foreground_dim
+  editorWhitespace.foreground: comment
+  editorGutter.background: background
+  editorGutter.foreground: comment
+  editorWidget.background: background_alt
+  editorWidget.border: border
+  editorSuggestWidget.background: background_alt
+  editorSuggestWidget.selectedBackground: background_sel
+  editorHoverWidget.background: background_alt
+  editorError.foreground: error
+  editorWarning.foreground: warning
+  editorLineNumber.foreground: comment
+  editorLineNumber.activeForeground: foreground_dim
+  sideBar.background: background_alt
+  sideBar.foreground: foreground_dim
+  sideBarSectionHeader.background: background
+  activityBar.background: background
+  activityBar.foreground: foreground_dim
+  activityBar.activeBorder: accent
+  activityBarBadge.background: accent
+  titleBar.activeBackground: background
+  titleBar.activeForeground: foreground
+  statusBar.background: background_alt
+  statusBar.foreground: foreground_dim
+  statusBar.debuggingBackground: accent_3
+  tab.activeBackground: background
+  tab.inactiveBackground: background_alt
+  tab.activeBorderTop: accent
+  tab.inactiveForeground: foreground_dim
+  input.background: background_sel
+  input.border: border
+  input.foreground: foreground
+  dropdown.background: background_alt
+  dropdown.border: border
+  list.activeSelectionBackground: background_sel
+  list.hoverBackground: background_alt
+  list.focusBackground: background_sel
+  list.inactiveSelectionBackground: background_alt
+  list.activeSelectionForeground: foreground
+  list.warningForeground: warning
+  list.errorForeground: error
+  listFilterWidget.background: background_sel
+  badge.background: accent
+  badge.foreground: background
+  button.background: accent
+  button.foreground: background
+  button.hoverBackground: accent_2
+  focusBorder: accent
+  foreground: foreground
+  descriptionForeground: foreground_dim
+  icon.foreground: foreground_dim
+  gitDecoration.addedResourceForeground: added
+  gitDecoration.modifiedResourceForeground: modified
+  gitDecoration.deletedResourceForeground: removed
+  gitDecoration.untrackedResourceForeground: string
+  panel.background: background_alt
+  panel.border: border
+  terminal.background: background
+  terminal.foreground: foreground
+  terminal.ansiBlack: background_alt
+  terminal.ansiRed: error
+  terminal.ansiGreen: added
+  terminal.ansiYellow: warning
+  terminal.ansiBlue: accent_2
+  terminal.ansiMagenta: accent_3
+  terminal.ansiCyan: function
+  terminal.ansiWhite: foreground_dim
+  terminal.ansiBrightBlack: comment
+  terminal.ansiBrightRed: removed
+  terminal.ansiBrightGreen: string
+  terminal.ansiBrightYellow: number
+  terminal.ansiBrightBlue: accent
+  terminal.ansiBrightMagenta: constant
+  terminal.ansiBrightCyan: type
+  terminal.ansiBrightWhite: foreground
+  scrollbar.shadow: "#00000000"
+  scrollbarSlider.background: "#ffffff14"
+  scrollbarSlider.hoverBackground: "#ffffff26"
+  scrollbarSlider.activeBackground: "#ffffff3d"
+tokens:
+  - scope: comment
+    foreground: comment
+    fontStyle: italic
+  - scope: string
+    foreground: string
+  - scope: string.escape
+    foreground: number
+  - scope: constant.numeric
+    foreground: number
+  - scope: constant.language, constant.character
+    foreground: constant
+  - scope: keyword, storage.type, storage.modifier, keyword.control
+    foreground: keyword
+  - scope: keyword.operator
+    foreground: operator
+  - scope: entity.name.function, support.function
+    foreground: function
+  - scope: entity.name.type, entity.name.class, support.type, support.class
+    foreground: type
+  - scope: entity.name.tag
+    foreground: tag
+  - scope: entity.other.attribute-name
+    foreground: attribute
+  - scope: variable, variable.other
+    foreground: variable
+  - scope: variable.language
+    foreground: constant
+    fontStyle: italic
+  - scope: entity.other.inherited-class
+    foreground: type
+  - scope: punctuation, meta.brace
+    foreground: operator
+  - scope: invalid
+    foreground: error
+  - scope: markup.heading
+    foreground: keyword
+    bold: true
+  - scope: markup.italic
+    italic: true
+  - scope: markup.bold
+    bold: true
+  - scope: markup.inserted
+    foreground: added
+  - scope: markup.deleted
+    foreground: removed
+  - scope: markup.changed
+    foreground: modified
+  - scope: diff.gutter.inserted, diff.gutter.deleted
+    foreground: foreground_dim
+  - scope: entity.name.section
+    foreground: accent

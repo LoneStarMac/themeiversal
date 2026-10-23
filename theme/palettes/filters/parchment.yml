@@ -1,0 +1,15 @@
+# Another example filter â demonstrates hue/tint/contrast.
+
+id: parchment
+name: Parchment
+description: Aged-paper variant: warms surfaces, drops hue variety,
+  boosts text contrast against the background.
+
+all: (sat:0.8; temp:0.08)
+colors:
+  background: (tint:(number;0.12); brightness:0.97)
+  background_alt: (tint:(number;0.10))
+  accent: (hue:-6)
+  string: (hue:8; sat:0.7)
+  foreground: (contrast:1.15)
+  comment: (tint:(background;0.35))

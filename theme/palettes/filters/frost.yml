@@ -1,0 +1,39 @@
+# A Zensicle FILTER: math applied on top of a base palette.
+#
+# Each entry maps a palette color (unsuffixed name; the filter applies
+# to both _pd and _pl) to a transform. Transforms chain left to right:
+#
+#   (background; temp:-0.15; opacity:0.5)
+#
+# Operations:
+#   temp:t       -0..1   cool (<0, toward blue) / warm (>0, toward red)
+#   hue:h        -180..180  rotate hue, degrees
+#   sat:s        0..2   saturation multiplier (1 = unchanged)
+#   brightness:b 0..2   HSL lightness multiplier
+#   tint:(color;amt)    blend toward palette color `color` by `amt` 0..1
+#   opacity:o    0..1   blend toward the variant's background surface
+#                       (what people usually mean by transparency here)
+#   contrast:c   0..2   distance from the variant background
+#
+# `all:` applies operations to every color in the palette first;
+# per-color entries then apply on top of that.
+#
+# Omitting a color entirely (no `all`, no entry) leaves it unchanged.
+
+id: frosty
+name: Frosty
+description: >-
+  Cools the whole palette down, desaturates slightly, and washes
+  surfaces toward pale ice. Syntax accents keep some saturation so
+  code still pops.
+
+all: (sat:0.85; temp:-0.12)
+colors:
+  background: (temp:-0.15; brightness:1.06)
+  background_alt: (temp:-0.15; brightness:1.05)
+  background_sel: (temp:-0.12)
+  selection_bg: (temp:-0.12)
+  line_highlight: (opacity:0.5)
+  border: (temp:-0.10)
+  comment: (sat:0.7)
+  foreground_dim: (opacity:0.75)
